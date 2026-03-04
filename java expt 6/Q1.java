@@ -1,11 +1,10 @@
-// Custom Exception for Low Balance
+
 class LowBalanceException extends Exception {
     public LowBalanceException(String message) {
         super(message);
     }
 }
 
-// Custom Exception for Negative Inputs
 class NegativeNumberException extends Exception {
     public NegativeNumberException(String message) {
         super(message);
@@ -50,11 +49,12 @@ public class Q1 {
         try {
             account.balanceEnquiry();
             account.deposit(200);
-            account.withdraw(800); // This will trigger LowBalanceException
+            account.withdraw(800); 
         } catch (LowBalanceException | NegativeNumberException e) {
             System.out.println("Error: " + e.getMessage());
         } finally {
             System.out.println("Transaction attempt finished.");
         }
     }
+
 }
